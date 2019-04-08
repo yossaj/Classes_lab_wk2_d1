@@ -1,10 +1,12 @@
 class Team
-  attr_accessor :team_name, :players, :coach
+  attr_accessor :team_name, :players, :coach, :team_score
 
-  def initialize(team_name, players, coach)
+  def initialize(team_name, players, coach, team_score = 0)
     @team_name = team_name
     @players = players
     @coach = coach
+    @team_score = team_score
+
   end
 
   # def team_name
@@ -28,6 +30,10 @@ class Team
 
   def player_is_in_team?(player)
     @players.include?(player)
+  end
+
+  def team_win(result)
+    @team_score += 1 if result
   end
 
 
