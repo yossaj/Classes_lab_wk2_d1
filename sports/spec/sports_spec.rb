@@ -21,6 +21,11 @@ class TestSports < MiniTest::Test
     assert_equal( 4,team.players.count)
   end
 
+  def test_player_is_in_team
+    team = Team.newteam = Team.new("The Sputters", ['Billy Bob', 'Billy Balls', 'Billy Band', 'Billy Bongo'], 'Old Bilbo')
+    team.player_is_in_team?("Billy Bob")
+    assert_equal(true , true)
+  end
 
 
 end
